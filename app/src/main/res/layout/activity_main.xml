@@ -18,11 +18,11 @@
             android:text="保存"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/storeButton" android:layout_marginTop="16dp"
+            android:id="@+id/storeButton" android:layout_marginTop="12dp"
             app:layout_constraintTop_toBottomOf="@+id/textInputEditText"
             style="@style/Widget.AppCompat.Button.Colored"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toStartOf="@+id/updateButton"/>
     <ListView
             android:layout_width="379dp"
             android:layout_height="574dp" android:layout_marginTop="16dp"
@@ -30,4 +30,15 @@
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="16dp" android:id="@+id/taskListView"/>
+    <Button
+            android:text="更新"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:id="@+id/updateButton" app:layout_constraintStart_toEndOf="@+id/storeButton"
+            android:layout_marginStart="32dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintHorizontal_bias="0.5" android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/textInputEditText"/>
+    <androidx.constraintlayout.widget.Group android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                            android:id="@+id/group"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
