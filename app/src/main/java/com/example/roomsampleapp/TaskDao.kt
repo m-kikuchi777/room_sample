@@ -2,6 +2,7 @@ package com.example.roomsampleapp
 
 import androidx.room.Dao
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 
 /**
@@ -14,11 +15,11 @@ interface TaskDao {
      * 保存されているすべてのTaskデータを取得する。
      */
     @Query("SELECT * FROM task_table")
-    fun getAllTasks(): List<Task>
+    suspend fun getAllTasks(): List<Task>
 
     /**
      * Taskデータを保存する。
      */
-    @Insert
-    fun insert(task: Task)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert(task: Task)
 }
